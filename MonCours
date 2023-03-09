@@ -152,6 +152,109 @@ Thirst Part
 
 Conditionner l’affichage des éléments
 
+Une directive est une classe qui vient ajouter du comportement à l'élément sur lequel elle est posée. L'astérisque au début du nom  *ngIf  nous montre qu'il s'agit d'une directive structurelle, qui viendra donc toucher à la structure du document.
+
+On passe à  *ngIf  la condition selon laquelle l'élément doit être ajouté. Ici, Angular évalue  faceSnap.location  comme étant "truthy" quand la propriété existe et qu'elle ne contient pas la chaîne vide (ou les valeurs  null,  false, ou  0, mais il s'agit ici d'une string). Elle est évaluée comme étant "falsey" quand la propriété retourne undefined, c'est-à-dire quand elle n'existe pas.
+
+
+pour afficher uniquement les photos prises à Paris. On peut même mettre la directive  *ngIf  sur des components. Dans  app.component.html, on pourrait imaginer un filtre pour montrer uniquement les FaceSnaps ayant plus de 5  snaps  :
+
+<app-face-snap [faceSnap]="mySnap" *ngIf="mySnap.snaps > 5"></app-face-snap>
+
+<app-face-snap [faceSnap]="myOtherSnap" *ngIf="myOtherSnap.snaps > 5"></app-face-snap>
+
+<app-face-snap [faceSnap]="myLastSnap" *ngIf="myLastSnap.snaps > 5"></app-face-snap>
+
+
+En résumé
+
+* Vous pouvez ajouter des propriétés optionnelles à une classe en y ajoutant un point d'interrogation  ? 
+* Ajouter la directive  *ngIf  à un élément (qui peut aussi être un component) dit à Angular d'ajouter ou non cet élément au DOM selon la condition que vous lui passez, par exemple  <p *ngIf="size === 'large'"> 
+—————————————————————
+Afficher des listes
+
+Dans une application web dynamique, il n'est généralement pas possible de prévoir en avance le nombre d'éléments qu'il y aura dans une liste de données retournée par le serveur. Il va souvent vous les renvoyer sous forme de tableau (ou Array, en anglais), et ce sera à vous d'arriver à afficher la liste en entier, qu'il y ait un élément ou mille ! Vous devrez donc itérer sur un tableau pour y arriver, et c'est là où intervient la directive*ngFor.
+
+
+‘ng’ est un préfixe commun utilisé dans les commandes de la ligne de commande pour les projets Angular. Il est souvent utilisé pour exécuter diverses tâches de développement telles que la création de composants, de services, de modules, de directives, de pipes, etc. Il s'agit d'une abréviation de "Angular" et est utilisé pour désigner les outils de la ligne de commande d'Angular.
+En utilisant les outils de ligne de commande ‘ng’, les développeurs peuvent automatiser et simplifier certaines tâches courantes de développement telles que la génération de code et la gestion des dépendances. Les commandes ‘ng’ sont souvent utilisées dans des environnements de développement tels que le terminal de commandes, le shell, ou les scripts de construction automatisés.
+Par exemple, ‘ng’ serve lance un serveur de développement pour l'application Angular, ng generate component génère un nouveau composant Angular, ng build compile l'application pour la production, etc.
+
+
+Au lieu d'avoir trois variables de type  FaceSnap  dans votre AppComponent, vous allez créer une seule variable qui contiendra un tableau de type  FaceSnap[]  et modifier votre  ngOnInit()
+
+
+Maintenant, dans le template, au lieu d'insérer plusieurs instances de  <app-face-snap> , vous allez utiliser le code suivant :
+
+<app-face-snap *ngFor="let faceSnap of faceSnaps" [faceSnap]="faceSnap"></app-face-snap>
+Regardons de plus près ce qui se passe exactement avec cette syntaxe :
+* la directive  *ngFor  fonctionne un peu comme une boucle  for...of  , c'est-à-dire que, dans ce cas de figure, elle va itérer sur le tableau  faceSnaps  et vous exposer l'élément correspondant à chaque itération sous l'alias  faceSnap 
+* vous associez ensuite l'élément du tableau à la propriété  faceSnap  du component. 
+
+Rien ne vous empêche d'utiliser des alias comme ça dans vos applications, mais on préférera généralement la version plus courte. Vous utiliserez très souvent  *ngFor, donc vous prendrez vite l'habitude !
+
+
+En résumé
+
+* La directive  *ngFor  vous permet d'insérer un élément dans le DOM pour chaque élément dans un tableau. 
+* La syntaxe  let element of array  vous donne accès à l'élément de chaque itération, vous permettant de l'injecter dans un component, par exemple. 
+
+——————————————————————
+Ajoutez du style dynamique
+
+La fonctionnalité que je vous propose d'ajouter maintenant est que plus un FaceSnap a de "snaps", plus le nombre de "snaps" sera coloré en vert. Pour ceci, vous allez utiliser la directive[ngStyle]
+
+Je vous encourage à créer vos propres styles ici. Si jamais vous souhaitez continuer le cours sans le faire, je vous partage une idée. Vous pouvez remplacer le contenu de face-snap.component.scss
+
+
+La directive  [ngStyle]  prendra comme argument un objet où :
+* les clés sont les styles CSS à modifier ; 
+* les valeurs sont les valeurs que doivent prendre ces styles. 
+
+Pour utiliser directement le nombre de snaps comme valeur pour le vert de la couleur de texte, vous pouvez utiliser la fonction CSS  rgb()  :
+
+<span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">🤌 {{ faceSnap.snaps }}</span>
+
+En résumé
+
+* La directive  [ngStyle]  permet d'appliquer des styles qui dépendent de valeurs dynamiques, comme un texte qui, plus il y a de snaps, devient de plus en plus vert. 
+* La directive  [ngStyle]  prend comme argument un objet où les clés correspondent aux styles CSS à modifier, et les valeurs aux valeurs que doivent prendre ces styles. 
+
+————————————————————————————
+Mettez de la classe
+L'objectif de ce chapitre est de faire ressortir visuellement les FaceSnaps que l'utilisateur a "snapped". On pourra imaginer une classe snapped  qui viendra s'ajouter à la  <div class="face-snap-card">  pour modifier quelques couleurs, par exemple. On ajoute cette classe dans  face-snap.component.scss
+
+
+
+Maintenant, il va falloir appliquer cette classe conditionnellement. Je vais vous expliquer le fonctionnement de la directive  [ngClass]  et vous laisser essayer d'implémenter la fonctionnalité recherchée.
+[ngClass]  prend un objet en argument, comme  [ngStyle], mais dont le fonctionnement est différent :
+* les clés sont les noms de classe CSS à appliquer ; 
+* les valeurs sont les conditions qui doivent être remplies pour que les classes correspondantes s'appliquent. 
+En gros :
+
+<div [ngClass]="{ 'class-name': condition }"></div>
+
+<div class="face-snap-card" [ngClass]="{ snapped: buttonText === 'Oops, unSnap!' }">
+
+
+En résumé
+
+* La directive  [ngClass]  permet d'ajouter dynamiquement des classes à des éléments HTML. 
+* [ngClass]  prend un objet en argument où les clés sont des noms de classe CSS, et les valeurs sont les conditions selon lesquelles les classes doivent être appliquées. 
+
+
+
+* Vous avez découvert les directives : des classes qui permettent d'ajouter des comportements à des éléments HTML, ou même à des components. 
+* Vous avez implémenté des directives structurelles pour modifier la structure du document :
+    * *ngIf  pour ajouter un élément ou non au DOM selon une condition donnée ; 
+    * *ngFor  pour ajouter autant d'éléments au DOM qu'il y a d'éléments dans un tableau. 
+* Vous avez utilisé des directives par attribut pour gérer dynamiquement les styles :
+    * [ngStyle]  pour paramétrer des styles selon des valeurs venant du TypeScript ; 
+    * [ngClass]  pour ajouter et retirer des classes CSS selon une condition donnée. 
+
+
+
+
 
 
 

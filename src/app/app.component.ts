@@ -7,22 +7,27 @@ import { FaceSnap } from './models/face-snap.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit{
+  //Tableau
+  faceSnap!: FaceSnap[];
+
   //CREATION DE PROPRIÉTÉ DE TYPE FACESNAP
-  mySnap!: FaceSnap;
-  myOtherSnap!: FaceSnap;
-  myLastSnap!: FaceSnap;
+  // mySnap!: FaceSnap;
+  // myOtherSnap!: FaceSnap;
+  // myLastSnap!: FaceSnap;
 
 //initialisation avec cette fonction
   ngOnInit() {
-    this.mySnap = {
+    //Tableau qui va regrouper tous nos elements
+    this.faceSnap = [
+      {
       title:'Archibald',
       description:'Mon enfant de toujours !',
       imageUrl:'https://media.istockphoto.com/id/1325578537/fr/photo/heureuse-m%C3%A8re-indienne-samuser-avec-sa-fille-en-plein-air-concept-de-famille-et-damour.webp?s=612x612&w=is&k=20&c=mE534M7qi8h11KIEy3QoH2VTinCJUaDaiV5v2G98hn0=',
       createDate : new Date(),
-      snaps: 0,
+      snaps: 145,
       location: 'Abidjan'
-    };
-    this.myOtherSnap = {
+      },
+      {
       title: 'Bath',
       description: 'EEEHOOO',
       imageUrl:
@@ -30,14 +35,15 @@ export class AppComponent implements OnInit{
       createDate: new Date(),
       snaps: 0,
       location: 'Yakro',
-    };
-    this.myLastSnap = {
+      },
+      {
       title:'Dorgeles',
       description:'reiennnnnnnnnn',
       imageUrl:'https://phoneky.co.uk/thumbs/android/thumbs/ico/8/s/louis-segond-android.jpg',
       createDate : new Date(),
       snaps : 0
-    };
+    }
+    ];
 
   }
 }
