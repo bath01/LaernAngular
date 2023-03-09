@@ -1,0 +1,159 @@
+Angular
+
+First Part
+
+Découvrez le framework Angular
+
+En bref, Angular est un framework JavaScript qui vous permet de développer des applications "efficaces et sophistiquées", comme dit la documentation. Il permet notamment de créer ce qu'on appelle des Single Page Applications (ou SPA) : des applications entières qui tournent dans une seule page HTML grâce au JavaScript.
+
+Dev angulaire faire participer trois langages comme: HTML SCSS ET TYPESCRIPT
+
+Angular est un framework complet, on peut créer des applications web complètes sans avoir besoin de librairies tierces supplémentaires.
+
+* Les best practices (les bonnes pratiques) Angular sont extrêmement précises – les structures des applications Angular ont tendance à se ressembler fortement, donc il est facile de passer d'un projet à un autre, et de s'assurer que son propre projet suit les meilleurs pratiques. 
+* Le framework a été conçu pour fonctionner avec le TypeScript – il est tout à fait possible d'utiliser le TypeScript pour React, Vue ou Svelte, mais Angular a été conçu pour ce langage, donc son intégration est forcément plus profonde. 
+
+RESUME
+* Le framework Angular utilise le HTML, le SCSS et le TypeScript. 
+* Le TypeScript est un langage qui ajoute des syntaxes au JavaScript, notamment pour le typage strict. 
+
+————————————————————
+
+Installez les dépendances
+
+Il vous faudra quelques outils indispensables pour du développement Angular en toute tranquillité comme NPM, NODE et après installer le CLI angular
+npm i -g @angular/cli
+After installation
+Ng v
+
+
+Angular fonctionne sur tous les navigateurs modernes.
+
+En résumé
+
+* Pour installer le CLI d'Angular, il vous faut une version LTS de Node et npm. 
+* On installe le CLI avec la commande  npm i -g @angular/cli 
+* On peut vérifier la version installée du CLI avec  ng v 
+———————————————————
+
+Construisez une application Angular avec le CLI
+
+
+Depuis une ligne de commande, naviguez dans le dossier où vous souhaitez créer votre projet Angular, et exécutez la commande suivante :
+ng new snapface --style=scss --skip-tests=true
+
+La commande  ng new  génère une nouvelle application Angular, installe les dépendances du projet, et initialise un dépôt Git. Le flag  --style=scss  dit au CLI que vous souhaitez utiliser le SCSS pour les styles (plutôt que le CSS ou le LESS, par exemple), et le flag  --skip-tests=true  dit que vous ne voulez pas générer de fichiers de tests unitaires pour ce projet.
+
+Pour lancer l’app on n’a cette commande:
+ ng serve
+
+Port: 4200
+
+En résumé
+
+* Une nouvelle application Angular se crée avec  ng new 
+* ng serve  exécute le serveur de développement. 
+* La balise  <app-root>  correspond à AppComponent. 
+
+Second Part
+
+Construire votre premier component
+
+Le mot component en anglais signifie "composant", et à juste titre : les components sont les composants de base d'une application Angular.
+
+Il n'y a pas de règle d'or dans le découpage d'une application en components : on essaie d'équilibrer entre ne pas avoir un trop grand nombre de components, et avoir quand même des components simples et pas trop gros.
+
+
+Le CLI d'Angular propose des commandes de création pour faciliter le développement, et vous allez en utiliser une maintenant, depuis une ligne de commande dans le dossier du projet :
+
+ng generate component face-snap
+
+Un décorateur en TypeScript permet, entre autres, d'apporter des modifications à une classe. Ici, le décorateur  @Component  vient ajouter tous les comportements nécessaires à l'utilisation de ce component dans l'application. Il est importé depuis le package  @angular/core
+
+En résumé
+
+* Une application Angular peut être vue comme une arborescence de components. 
+* Un component lie un template HTML et des styles SCSS à du comportement TS. 
+* Pour créer un component, on utilise la commande  ng generate component nom-du-component 
+* Le sélecteur d'un component correspond à la balise HTML personnalisée qu'on utilisera pour l'insérer dans l'application.
+
+————————————————
+
+
+Affichez des données
+
+En Angular, il y a deux façons principales d'exploiter une donnée venant du TypeScript dans le template : la string interpolation et la liaison par attribut, ou attribute binding. Mais pour afficher des données, il faut d'abord des données !
+`
+Comme vous pouvez le constater, on crée un attribut de classe en associant le nom de l'attribut à son type.
+
+Pour initialiser ces propriétés en suivant les best practices Angular, vous allez utiliser la méthode  ngOnInit()  (que vous aviez supprimée précédemment). Pour l'utiliser, votre component doit implémenter l'interface  OnInit
+
+La méthode  ngOnInit()  est appelée automatiquement par Angular au moment de la création de chaque instance du component. Elle permet notamment d'initialiser des propriétés.
+
+La string interpolation est la méthode la plus simple pour afficher le contenu d'une variable dans le template. Il suffit de mettre le nom de la variable à afficher entre doubles accolades {{ }} dans le HTML .
+
+
+En résumé
+
+* On déclare les propriétés d'un component en haut de sa classe, et on les initialise dans la méthode  ngOnInit() 
+* La méthode  ngOnInit()  est appelée une fois par instance de component au moment de la création de cette instance. 
+* La string interpolation avec les doubles accolades  {{ }}  permet d'insérer la valeur d'une propriété TypeScript dans le template. 
+* L'attribute binding permet de lier la valeur d'une propriété TypeScript à un attribut HTML, en mettant l'attribut entre crochets  []  et en passant le nom de la propriété. 
+
+——————————————————————
+
+Réagissez aux événements
+
+Le nom de méthode qui commence par on signale que cette méthode répond à un événement.
+Il faut maintenant lier cette méthode au clic sur le bouton avec la liaison par événement, ou event binding. Là où vous avez utilisé des crochets pour lier aux attributs, vous allez utiliser des parenthèses  ()  pour lier aux événements :
+
+<button (click)="onAddSnap()">Oh Snap!</button>
+
+Prenons quelques instants pour noter que chaque instance d'un component est totalement indépendante. 
+
+En résumé
+
+* Pour lier une méthode à un événement d'un élément du template, mettez l'événement entre parenthèses  ()  et passez la méthode en argument ; ex. : (click)="onClickButton()" 
+
+
+——————————————————————
+
+Ajoutez des propriétés personnalisées
+
+
+ Angular vous permet d'ajouter des propriétés personnalisées à vos components de manière à ce que vous puissiez les injecter depuis le component parent.
+
+
+Pour qu'une propriété puisse être injectée depuis l'extérieur d'un component, il faut lui ajouter le décorateur  @Input(). Créez maintenant une propriété  faceSnap  de type  FaceSnap  (votre nouveau type !) et mettez-lui ce décorateur :
+
+@Input() faceSnap!: FaceSnap;
+
+
+Input  doit être ajouté aux imports depuis  @angular/core  !
+
+Vous allez maintenant utiliser l'attribute binding pour lier cet objet à la propriété personnalisée  faceSnap  de FaceSnapComponent dans  app.component.html  :
+
+<app-face-snap [faceSnap]="mySnap"></app-face-snap>
+
+
+Comme vous pouvez le remarquer, la nouvelle propriété  faceSnap  est utilisée comme toute autre propriété.
+
+
+En résumé
+
+* N'hésitez pas à créer vos propres types, sous forme de classe par exemple, pour faciliter la manipulation de données dans votre application. 
+* Une propriété personnalisée est rendue injectable depuis l'extérieur grâce au décorateur  @Input() 
+* Une propriété en  @Input()  est utilisable comme n'importe quelle autre propriété : on peut en afficher les éléments, les modifier…  
+* On lie ensuite une valeur à cette propriété depuis le component parent avec l'attribute binding, c'est-à-dire le nom de la propriété entre crochets  []  en passant la valeur entre les guillemets ; ex. : [faceSnap]="mySnap".  
+
+
+
+Thirst Part
+
+Conditionner l’affichage des éléments
+
+
+
+
+
+
