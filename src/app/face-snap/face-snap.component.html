@@ -11,8 +11,8 @@
   <p>{{453456.876 | number: '1.0-1'}}</p>
   <p>{{ 0.336 | percent: '1.0-1' }}</p>
   <p>{{ 344.36 | currency }}</p>
-  <h2>{{ faceSnap.title | uppercase }}</h2>
-  <p>Mis en ligne {{ faceSnap.createDate | date: 'le dd/MM/yy à HH:mm' }}</p>
+  <h2>{{ faceSnap.title | titlecase }}</h2>
+  <p>Mis en ligne {{ faceSnap.createDate | date: 'le dd MMMM yy à HH:mm' }}</p>
   <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
   <p>{{ faceSnap.description }}</p>
   <p *ngIf="faceSnap.location">Photo prise à {{faceSnap.location}}</p>

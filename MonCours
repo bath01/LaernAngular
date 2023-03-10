@@ -10,12 +10,12 @@ Dev angulaire faire participer trois langages comme: HTML SCSS ET TYPESCRIPT
 
 Angular est un framework complet, on peut créer des applications web complètes sans avoir besoin de librairies tierces supplémentaires.
 
-* Les best practices (les bonnes pratiques) Angular sont extrêmement précises – les structures des applications Angular ont tendance à se ressembler fortement, donc il est facile de passer d'un projet à un autre, et de s'assurer que son propre projet suit les meilleurs pratiques. 
-* Le framework a été conçu pour fonctionner avec le TypeScript – il est tout à fait possible d'utiliser le TypeScript pour React, Vue ou Svelte, mais Angular a été conçu pour ce langage, donc son intégration est forcément plus profonde. 
+* Les best practices (les bonnes pratiques) Angular sont extrêmement précises – les structures des applications Angular ont tendance à se ressembler fortement, donc il est facile de passer d'un projet à un autre, et de s'assurer que son propre projet suit les meilleurs pratiques.
+* Le framework a été conçu pour fonctionner avec le TypeScript – il est tout à fait possible d'utiliser le TypeScript pour React, Vue ou Svelte, mais Angular a été conçu pour ce langage, donc son intégration est forcément plus profonde.
 
 RESUME
-* Le framework Angular utilise le HTML, le SCSS et le TypeScript. 
-* Le TypeScript est un langage qui ajoute des syntaxes au JavaScript, notamment pour le typage strict. 
+* Le framework Angular utilise le HTML, le SCSS et le TypeScript.
+* Le TypeScript est un langage qui ajoute des syntaxes au JavaScript, notamment pour le typage strict.
 
 ————————————————————
 
@@ -31,9 +31,9 @@ Angular fonctionne sur tous les navigateurs modernes.
 
 En résumé
 
-* Pour installer le CLI d'Angular, il vous faut une version LTS de Node et npm. 
-* On installe le CLI avec la commande  npm i -g @angular/cli 
-* On peut vérifier la version installée du CLI avec  ng v 
+* Pour installer le CLI d'Angular, il vous faut une version LTS de Node et npm.
+* On installe le CLI avec la commande  npm i -g @angular/cli
+* On peut vérifier la version installée du CLI avec  ng v
 ———————————————————
 
 Construisez une application Angular avec le CLI
@@ -51,9 +51,9 @@ Port: 4200
 
 En résumé
 
-* Une nouvelle application Angular se crée avec  ng new 
-* ng serve  exécute le serveur de développement. 
-* La balise  <app-root>  correspond à AppComponent. 
+* Une nouvelle application Angular se crée avec  ng new
+* ng serve  exécute le serveur de développement.
+* La balise  <app-root>  correspond à AppComponent.
 
 Second Part
 
@@ -72,9 +72,9 @@ Un décorateur en TypeScript permet, entre autres, d'apporter des modificatio
 
 En résumé
 
-* Une application Angular peut être vue comme une arborescence de components. 
-* Un component lie un template HTML et des styles SCSS à du comportement TS. 
-* Pour créer un component, on utilise la commande  ng generate component nom-du-component 
+* Une application Angular peut être vue comme une arborescence de components.
+* Un component lie un template HTML et des styles SCSS à du comportement TS.
+* Pour créer un component, on utilise la commande  ng generate component nom-du-component
 * Le sélecteur d'un component correspond à la balise HTML personnalisée qu'on utilisera pour l'insérer dans l'application.
 
 ————————————————
@@ -95,10 +95,10 @@ La string interpolation est la méthode la plus simple pour afficher le conten
 
 En résumé
 
-* On déclare les propriétés d'un component en haut de sa classe, et on les initialise dans la méthode  ngOnInit() 
-* La méthode  ngOnInit()  est appelée une fois par instance de component au moment de la création de cette instance. 
-* La string interpolation avec les doubles accolades  {{ }}  permet d'insérer la valeur d'une propriété TypeScript dans le template. 
-* L'attribute binding permet de lier la valeur d'une propriété TypeScript à un attribut HTML, en mettant l'attribut entre crochets  []  et en passant le nom de la propriété. 
+* On déclare les propriétés d'un component en haut de sa classe, et on les initialise dans la méthode  ngOnInit()
+* La méthode  ngOnInit()  est appelée une fois par instance de component au moment de la création de cette instance.
+* La string interpolation avec les doubles accolades  {{ }}  permet d'insérer la valeur d'une propriété TypeScript dans le template.
+* L'attribute binding permet de lier la valeur d'une propriété TypeScript à un attribut HTML, en mettant l'attribut entre crochets  []  et en passant le nom de la propriété.
 
 ——————————————————————
 
@@ -113,7 +113,7 @@ Prenons quelques instants pour noter que chaque instance d'un component est to
 
 En résumé
 
-* Pour lier une méthode à un événement d'un élément du template, mettez l'événement entre parenthèses  ()  et passez la méthode en argument ; ex. : (click)="onClickButton()" 
+* Pour lier une méthode à un événement d'un élément du template, mettez l'événement entre parenthèses  ()  et passez la méthode en argument ; ex. : (click)="onClickButton()"
 
 
 ——————————————————————
@@ -141,10 +141,10 @@ Comme vous pouvez le remarquer, la nouvelle propriété  faceSnap  est utilis�
 
 En résumé
 
-* N'hésitez pas à créer vos propres types, sous forme de classe par exemple, pour faciliter la manipulation de données dans votre application. 
-* Une propriété personnalisée est rendue injectable depuis l'extérieur grâce au décorateur  @Input() 
-* Une propriété en  @Input()  est utilisable comme n'importe quelle autre propriété : on peut en afficher les éléments, les modifier…  
-* On lie ensuite une valeur à cette propriété depuis le component parent avec l'attribute binding, c'est-à-dire le nom de la propriété entre crochets  []  en passant la valeur entre les guillemets ; ex. : [faceSnap]="mySnap".  
+* N'hésitez pas à créer vos propres types, sous forme de classe par exemple, pour faciliter la manipulation de données dans votre application.
+* Une propriété personnalisée est rendue injectable depuis l'extérieur grâce au décorateur  @Input()
+* Une propriété en  @Input()  est utilisable comme n'importe quelle autre propriété : on peut en afficher les éléments, les modifier… 
+* On lie ensuite une valeur à cette propriété depuis le component parent avec l'attribute binding, c'est-à-dire le nom de la propriété entre crochets  []  en passant la valeur entre les guillemets ; ex. : [faceSnap]="mySnap".
 
 
 
@@ -168,8 +168,8 @@ pour afficher uniquement les photos prises à Paris. On peut même mettre la dir
 
 En résumé
 
-* Vous pouvez ajouter des propriétés optionnelles à une classe en y ajoutant un point d'interrogation  ? 
-* Ajouter la directive  *ngIf  à un élément (qui peut aussi être un component) dit à Angular d'ajouter ou non cet élément au DOM selon la condition que vous lui passez, par exemple  <p *ngIf="size === 'large'"> 
+* Vous pouvez ajouter des propriétés optionnelles à une classe en y ajoutant un point d'interrogation  ?
+* Ajouter la directive  *ngIf  à un élément (qui peut aussi être un component) dit à Angular d'ajouter ou non cet élément au DOM selon la condition que vous lui passez, par exemple  <p *ngIf="size === 'large'">
 —————————————————————
 Afficher des listes
 
@@ -188,16 +188,16 @@ Maintenant, dans le template, au lieu d'insérer plusieurs instances de  <app-
 
 <app-face-snap *ngFor="let faceSnap of faceSnaps" [faceSnap]="faceSnap"></app-face-snap>
 Regardons de plus près ce qui se passe exactement avec cette syntaxe :
-* la directive  *ngFor  fonctionne un peu comme une boucle  for...of  , c'est-à-dire que, dans ce cas de figure, elle va itérer sur le tableau  faceSnaps  et vous exposer l'élément correspondant à chaque itération sous l'alias  faceSnap 
-* vous associez ensuite l'élément du tableau à la propriété  faceSnap  du component. 
+* la directive  *ngFor  fonctionne un peu comme une boucle  for...of  , c'est-à-dire que, dans ce cas de figure, elle va itérer sur le tableau  faceSnaps  et vous exposer l'élément correspondant à chaque itération sous l'alias  faceSnap
+* vous associez ensuite l'élément du tableau à la propriété  faceSnap  du component.
 
 Rien ne vous empêche d'utiliser des alias comme ça dans vos applications, mais on préférera généralement la version plus courte. Vous utiliserez très souvent  *ngFor, donc vous prendrez vite l'habitude !
 
 
 En résumé
 
-* La directive  *ngFor  vous permet d'insérer un élément dans le DOM pour chaque élément dans un tableau. 
-* La syntaxe  let element of array  vous donne accès à l'élément de chaque itération, vous permettant de l'injecter dans un component, par exemple. 
+* La directive  *ngFor  vous permet d'insérer un élément dans le DOM pour chaque élément dans un tableau.
+* La syntaxe  let element of array  vous donne accès à l'élément de chaque itération, vous permettant de l'injecter dans un component, par exemple.
 
 ——————————————————————
 Ajoutez du style dynamique
@@ -208,8 +208,8 @@ Je vous encourage à créer vos propres styles ici. Si jamais vous souhaitez con
 
 
 La directive  [ngStyle]  prendra comme argument un objet où :
-* les clés sont les styles CSS à modifier ; 
-* les valeurs sont les valeurs que doivent prendre ces styles. 
+* les clés sont les styles CSS à modifier ;
+* les valeurs sont les valeurs que doivent prendre ces styles.
 
 Pour utiliser directement le nombre de snaps comme valeur pour le vert de la couleur de texte, vous pouvez utiliser la fonction CSS  rgb()  :
 
@@ -217,8 +217,8 @@ Pour utiliser directement le nombre de snaps comme valeur pour le vert de la cou
 
 En résumé
 
-* La directive  [ngStyle]  permet d'appliquer des styles qui dépendent de valeurs dynamiques, comme un texte qui, plus il y a de snaps, devient de plus en plus vert. 
-* La directive  [ngStyle]  prend comme argument un objet où les clés correspondent aux styles CSS à modifier, et les valeurs aux valeurs que doivent prendre ces styles. 
+* La directive  [ngStyle]  permet d'appliquer des styles qui dépendent de valeurs dynamiques, comme un texte qui, plus il y a de snaps, devient de plus en plus vert.
+* La directive  [ngStyle]  prend comme argument un objet où les clés correspondent aux styles CSS à modifier, et les valeurs aux valeurs que doivent prendre ces styles.
 
 ————————————————————————————
 Mettez de la classe
@@ -228,8 +228,8 @@ L'objectif de ce chapitre est de faire ressortir visuellement les FaceSnaps que 
 
 Maintenant, il va falloir appliquer cette classe conditionnellement. Je vais vous expliquer le fonctionnement de la directive  [ngClass]  et vous laisser essayer d'implémenter la fonctionnalité recherchée.
 [ngClass]  prend un objet en argument, comme  [ngStyle], mais dont le fonctionnement est différent :
-* les clés sont les noms de classe CSS à appliquer ; 
-* les valeurs sont les conditions qui doivent être remplies pour que les classes correspondantes s'appliquent. 
+* les clés sont les noms de classe CSS à appliquer ;
+* les valeurs sont les conditions qui doivent être remplies pour que les classes correspondantes s'appliquent.
 En gros :
 
 <div [ngClass]="{ 'class-name': condition }"></div>
@@ -239,23 +239,224 @@ En gros :
 
 En résumé
 
-* La directive  [ngClass]  permet d'ajouter dynamiquement des classes à des éléments HTML. 
-* [ngClass]  prend un objet en argument où les clés sont des noms de classe CSS, et les valeurs sont les conditions selon lesquelles les classes doivent être appliquées. 
+* La directive  [ngClass]  permet d'ajouter dynamiquement des classes à des éléments HTML.
+* [ngClass]  prend un objet en argument où les clés sont des noms de classe CSS, et les valeurs sont les conditions selon lesquelles les classes doivent être appliquées.
 
 
 
-* Vous avez découvert les directives : des classes qui permettent d'ajouter des comportements à des éléments HTML, ou même à des components. 
+
+* Vous avez découvert les directives : des classes qui permettent d'ajouter des comportements à des éléments HTML, ou même à des components.
 * Vous avez implémenté des directives structurelles pour modifier la structure du document :
-    * *ngIf  pour ajouter un élément ou non au DOM selon une condition donnée ; 
-    * *ngFor  pour ajouter autant d'éléments au DOM qu'il y a d'éléments dans un tableau. 
+    * *ngIf  pour ajouter un élément ou non au DOM selon une condition donnée ;
+    * *ngFor  pour ajouter autant d'éléments au DOM qu'il y a d'éléments dans un tableau.
 * Vous avez utilisé des directives par attribut pour gérer dynamiquement les styles :
-    * [ngStyle]  pour paramétrer des styles selon des valeurs venant du TypeScript ; 
-    * [ngClass]  pour ajouter et retirer des classes CSS selon une condition donnée. 
+    * [ngStyle]  pour paramétrer des styles selon des valeurs venant du TypeScript ;
+    * [ngClass]  pour ajouter et retirer des classes CSS selon une condition donnée.
+
+
+
+Fourth part
+
+Changez la casse
+
+Angular vous fournit un type d'outil puissant pour ce cas de figure : les pipes. Un pipe est appliqué dans le HTML et va formater la valeur qu'on lui passe selon le pipe utilisé sans toucher à la donnée sous-jacente. Dans ce chapitre, vous verrez quelques pipes qui existent pour changer la casse d'une chaîne de caractères.
+
+Il existe trois pipes fournis par Angular pour modifier la casse :
+* LowerCasePipe : on affiche le texte en minuscules
+* UpperCasePipe : on affiche le texte en majuscules
+* TitleCasePipe : on affiche le texte avec une majuscule au début de chaque mot, avec le reste du mot en minuscules
+
+On applique un pipe à une chaîne de caractères affichée avec la string interpolation. On rajoute le caractère pipe  |  puis le nom du pipe. Par exemple, si vous voulez afficher le titre des FaceSnap en majuscules, vous appliquez UpperCasePipe :
+
+<h2>{{ faceSnap.title | uppercase }}</h2>
+
+
+De même pour LowerCasePipe et TitleCasePipe :
+
+<h2>{{ faceSnap.title | lowercase }}</h2>
+
+<h2>{{ faceSnap.title | titlecase }}</h2>
+
+Les pipes existent uniquement pour modifier le formatage affiché d'une donnée : on ne peut pas les utiliser ailleurs que dans le template, et il est fortement déconseillé de les utiliser ailleurs que dans une string interpolation.
+
+En résumé
+
+* Un pipe permet de formater l'affichage d'une donnée sans modifier la donnée sous-jacente.
+* Angular fournit trois pipes pour modifier la casse affichée d'une chaîne de caractères : UpperCasePipe, LowerCasePipe, et TitleCasePipe pour les majuscules, les minuscules et le mélange type "titre".
+
+———————————————————
+Formatez les dates
+
+Vous allez maintenant personnaliser ce formatage pour améliorer l'expérience de vos utilisateurs avec DatePipe.
+
+Il est tout à fait possible d'utiliser DatePipe comme vous avez utilisé UpperCasePipe précédemment, et un formatage par défaut sera appliqué :
+
+<p>Mis en ligne le {{ faceSnap.createdDate | date }}</p>
+
+date: 'longDate'
+date: 'dd/MM/yy, à HH:mm'
+date: 'à HH:mm, le d MMMM yyyy'
+
+En résumé
+
+* DatePipe permet de formater les dates, et sans configuration fournit un formatage par défaut.
+* DatePipe fournit des configurations prédéfinies avec des noms comme  short,  longDate  ou  mediumTime
+* DatePipe permet également de personnaliser totalement le format d'affichage des dates avec des chaînes de caractères qui encodent le format souhaité, par exemple  'à HH:mm, le d MMMM yyyy'
+———————————————————
+Formatez les chiffres
+
+Dans le cadre de ce cours, je voudrais partager avec vous une dernière catégorie de pipes : ceux qui concernent le formatage des nombres selon les règles de locale de l'application. Il y en a trois :
+* DecimalPipe – facilite l'affichage de nombres avec des chiffres après la virgule (qui met une virgule plutôt qu'un point, par exemple).
+* PercentPipe – formate les chiffres en pourcentage.
+* CurrencyPipe – permet d'afficher des nombres sous forme de monnaie très facilement.
+
+Pour la démonstration des pipes liés aux nombres, ajoutez simplement un paragraphe contenant un nombre. Il faut que ce nombre soit entre doubles accolades pour que vous puissiez y attribuer un pipe (et aussi pour qu'il soit considéré de type  number
+
+
+
+Si vous avez modifié la locale de votre application pour la passer en français, regardez ce qui se passe quand vous ajoutez DecimalPipe avec le mot-clé  number  :
+
+
+<p>{{ 4346234.36 | number }}</p>
+
+<p>{{ 4346234.36 | number: '1.0-0' }}</p>
+
+La configuration signifie :
+* au moins un chiffre pour les entiers ;
+* minimum 0 chiffres après la virgule – maximum 0 chiffres (Angular arrondira donc à l'entier le plus proche).
+
+PercentPipe arrondit par défaut les pourcentages à l'entier le plus proche. Vous pouvez cependant le configurer de la même manière que DecimalPipe :
+
+<p>{{ 0.336 | percent: '1.0-1' }}</p>
+
+
+Quand les nombres dans votre application correspondent à des montants d'argent, CurrencyPipe facilite leur affichage. Si vous utilisez l'affichage par défaut : 
+
+<p>{{ 344.36 | currency }}</p>
+
+
+
+Vous pouvez passer un deuxième argument qui permet d'afficher le code de la monnaie plutôt que son symbole. Pour passer un deuxième argument à un pipe, on remet un deux-points  :  et on passe le deuxième argument :
+
+<p>{{ 344.36 | currency: 'EUR' : 'code' }}</p>
 
 
 
 
+En résumé
 
+* DecimalPipe (mot-clé  number ) vous permet d'afficher un nombre selon les règles de la locale de l'application.
+* PercentPipe affiche un nombre entre 0 et 1 sous forme de pourcentage, arrondi par défaut à l'entier le plus proche.
+* DecimalPipe et PercentPipe acceptent un argument de configuration sous la forme 'chiffresMinAvantVirgule.chiffresMinAprèsVirgule-chiffresMaxAprèsVirgule' ex. :  '1.0-1'
+* CurrencyPipe facilite l'affichage des montants d'argent, et accepte plusieurs arguments de configuration séparés par des deux-points  :
+
+
+Qu'avez-vous appris dans cette partie du cours ?
+
+* Vous avez découvert les pipes – des outils pour gérer le format d'affichage d'une donnée sans modifier la donnée elle-même.
+* Vous avez changé la casse de vos chaînes de caractères avec UpperCasePipe, LowerCasePipe et TitleCasePipe.
+* Vous avez modifié l'affichage de la date de création des FaceSnaps avec DatePipe, et vous avez vu les différentes manières de personnaliser l'affichage des dates en passant un argument de configuration à DatePipe.
+* Vous avez manipulé le format d'affichage des nombres avec DecimalPipe, PercentPipe et CurrencyPipe.
+
+
+
+PART FIVE
+
+Partagez des données avec les Services
+
+
+Dans une application complète Angular, vous aurez des dizaines, voire des centaines de components différents. Ces components auront très souvent besoin d'accéder aux mêmes données. Il y aura des interactions courantes avec ces données, comme l'écriture, la modification et la suppression. L'application peut également avoir besoin d'interagir avec un serveur concernant ces données, pour la lecture et l'enregistrement. 
+
+Pour mieux organiser votre code, pour éviter de répéter des blocs et pour toujours avoir des données à jour partout dans l'application, ce serait intéressant de pouvoir regrouper les données et leurs méthodes ensemble, de les centraliser. En Angular, cette centralisation se fait dans des services.
+
+
+Un service est une classe, et la façon la plus simple de déclarer une classe comme étant un service est d'utiliser le décorateur  @Injectable()  qui s'importe depuis  @angular/core
+
+
+L'objet de configuration qui spécifie  providedIn: 'root'  dit à Angular d'enregistrer ce service à la racine de l'application. Ce sera très souvent le cas pour vos services, car ça permet de s'assurer de n'avoir qu'une seule instance du service, partagée par tous les partis intéressés.
+
+
+
+Le premier élément que vous allez déporter dans votre service est le tableau des FaceSnaps. Il est important de savoir qu'un service n'a pas de méthode  ngOnInit(), car les services ne sont pas instanciés de la même manière que les components.
+
+
+Pour pouvoir utiliser un service dans un component, il faut utiliser le système d'injection de dépendances (dependency injection ou DI) que vous fournit Angular. C'est très simple : vous passez un argument du type du service au constructor du component, et Angular vous mettra à disposition la bonne instance du service.
+
+
+import { FaceSnapsService } from '../services/face-snaps.service';
+//...
+constructor(private faceSnapsService: FaceSnapsService) { }
+
+Pour rappel, ajouter un modificateur d'accès comme  public  ou  private  à un argument du  constructor  crée une propriété avec ce nom-là dans la classe. Vous aurez donc accès au service via la propriété  faceSnapsService.
+
+
+Maintenant que vous avez accès au service, vous pouvez modifier l'initialisation de la propriété  faceSnaps  du component pour y attribuer le tableau du service :
+
+ngOnInit(): void {
+
+    this.faceSnaps = this.faceSnapsService.faceSnaps;
+
+}
+
+
+En résumé
+
+* Les services permettent de centraliser les données et la logique pour les différents domaines de votre application.
+* Créer un service est aussi simple qu'ajouter le décorateur  @Injectable()  à une classe.
+* Pour injecter un service dans un component, ajoutez un argument au constructor du component qui a le type du service, par exemple private userService: UserService
+
+———————————————————
+Centralisez votre logique avec les Services
+
+Cependant, dans une application totalement dynamique, on peut imaginer que ces FaceSnaps viendraient d'un serveur, ou d'une autre partie de l'application, et qu'il faudrait appeler une méthode pour les récupérer. D'ailleurs, toute modification d'un FaceSnap entraînerait également un appel au serveur.
+
+Il faudra donc centraliser toutes les interactions avec les FaceSnaps dans FaceSnapsService, et c'est exactement ce que vous allez faire maintenant !
+
+
+La première méthode que vous allez créer est  getAllFaceSnaps(). Cette méthode retournera, comme son nom l'indique, tous les FaceSnaps contenus dans le service.
+
+Il s'agit d'une méthode TypeScript, donc il est vivement conseillé de stipuler son type de retour – ici, il s'agit d'un tableau de  FaceSnap  :
+
+getAllFaceSnaps(): FaceSnap[] {
+
+    return this.faceSnaps;
+
+}
+
+
+Pour l'instant, vous n'avez aucun moyen d'identifier un FaceSnap directement. Ajoutez dès maintenant une propriété obligatoire  id  de type  number  à votre modèle FaceSnap 
+
+Et ajoutez un  id  différent à chacun des FaceSnaps dans votre service, par exemple
+
+
+Cette méthode :
+* cherche un FaceSnap par son  id  dans le tableau faceSnaps avec la fonction  find()  ;
+* si le FaceSnap existe, on lui incrémente ses  snaps  ;
+* sinon, on  throw  une erreur.
+
+
+En résumé
+
+* Centraliser les interactions dans un service sous forme de méthodes crée une structure plus modulaire, qui facilite la maintenance et les évolutions de votre application.
+* Comme dans toute base de code, refactorisez pour éviter de répéter des blocs de code (le principe DRY : Don't Repeat Yourself).
+* Les literal types permettent de créer rapidement des types personnalisés, souvent utilisés pour limiter les choix pour un argument de méthode, par exemple : fileType: 'image' | 'video'
+———————————————————————————
+
+
+Passez en SPA avec le routing
+
+
+Les Single Page Applications (ou SPA) sont de plus en plus courantes dans le monde du développement web moderne. Elles permettent une performance sans égale en enlevant le besoin d'une application de demander, recevoir, puis afficher une nouvelle page HTML à chaque changement d'URL. Angular vous permet avec le routing de créer ce genre d'application – à chaque URL correspondra un component, et Angular remplacera le component actif sans émettre de requête au serveur.
+
+
+En résumé
+
+* Un module de routing contient un tableau de type  Routes  qui contient les routes de l'application.
+* Une route est un objet de type  { path: 'myPath', component: MyComponent }  qui spécifie le component à afficher pour chaque route.
+* On appelle  RouterModule.forRoot()  en passant le tableau de routes pour enregistrer les routes dans le routeur Angular.
+* On enregistre le module de routing dans AppModule pour ajouter le routeur configuré à l'application.
+* On ajoute une balise  <router-outlet>  pour dire à quel niveau du template le component de la route active doit être inséré.
+* Pour ajouter des fichiers statiques à une application (comme des images), on les stocke dans le dossier  assets  .
 
 
 
